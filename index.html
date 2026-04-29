@@ -1,540 +1,738 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Apex Defense Systems | Advanced Military Hardware</title>
-  <!-- Google Fonts & simple reset -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Pani Puri Express | Instant Chaat Delivery</title>
+    <!-- Google Fonts & simple styling reset -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #0a0c12;
-      color: #eef2ff;
-      line-height: 1.5;
-      scroll-behavior: smooth;
-    }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7e8;
+            color: #2d2a24;
+            line-height: 1.4;
+        }
 
-    /* stealth / military aesthetic */
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 28px;
-    }
+        /* container utility */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
-    /* header / nav */
-    .header {
-      padding: 24px 0 20px;
-      border-bottom: 1px solid rgba(70, 130, 200, 0.25);
-      background: rgba(10, 12, 18, 0.9);
-      backdrop-filter: blur(6px);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+        /* header / nav */
+        .navbar {
+            background: #ffeed9;
+            border-bottom: 2px solid #ffc285;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(2px);
+        }
 
-    .nav-wrapper {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 16px 0;
+            gap: 16px;
+        }
 
-    .logo h1 {
-      font-size: 1.8rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      background: linear-gradient(135deg, #FFFFFF, #7aa9e2);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
+        .logo h1 {
+            font-size: 1.9rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #e67e22, #d35400);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
 
-    .logo span {
-      font-size: 0.75rem;
-      font-weight: 400;
-      color: #8c9bb0;
-      letter-spacing: 1px;
-      display: block;
-    }
+        .logo p {
+            font-size: 0.8rem;
+            color: #b45f2b;
+            font-weight: 500;
+        }
 
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      font-weight: 600;
-    }
+        .delivery-badge {
+            background: #fff1e0;
+            padding: 8px 18px;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
 
-    .nav-links a {
-      color: #cdd9ff;
-      text-decoration: none;
-      transition: 0.2s;
-      font-size: 0.95rem;
-    }
+        .delivery-badge i {
+            color: #e67e22;
+            font-size: 1.3rem;
+        }
 
-    .nav-links a:hover {
-      color: white;
-      text-shadow: 0 0 4px rgba(0, 160, 255, 0.5);
-    }
+        /* hero */
+        .hero {
+            background: linear-gradient(107deg, #ffedd5 0%, #ffe2b5 100%);
+            border-radius: 0 0 48px 48px;
+            margin-bottom: 32px;
+            padding: 40px 0 48px;
+        }
 
-    .btn-contact {
-      background: rgba(30, 90, 150, 0.3);
-      border: 1px solid #2c6e9e;
-      padding: 8px 20px;
-      border-radius: 40px;
-      font-weight: 600;
-    }
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 32px;
+        }
 
-    /* hero section */
-    .hero {
-      padding: 60px 0 40px;
-      text-align: center;
-    }
+        .hero-text h2 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #b64926;
+        }
 
-    .hero h2 {
-      font-size: 3rem;
-      font-weight: 800;
-      background: linear-gradient(to right, #fff, #8eb9ff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      margin-bottom: 16px;
-    }
+        .hero-text p {
+            font-size: 1.1rem;
+            margin: 16px 0 24px;
+            color: #6b3e1c;
+            max-width: 500px;
+        }
 
-    .hero p {
-      font-size: 1.2rem;
-      color: #a9bbd4;
-      max-width: 700px;
-      margin: 0 auto 32px;
-    }
+        .btn-order {
+            background-color: #e67e22;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 6px 14px rgba(230,126,34,0.3);
+        }
 
-    /* unified showcase image (one reference image for all weapons) */
-    .showcase {
-      background: #11141f;
-      border-radius: 36px;
-      padding: 20px 20px 24px;
-      margin: 20px 0 40px;
-      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.6);
-      border: 1px solid rgba(60, 110, 155, 0.4);
-      transition: all 0.2s;
-    }
+        .btn-order:hover {
+            background-color: #cf711f;
+            transform: scale(1.02);
+        }
 
-    .showcase figcaption {
-      text-align: center;
-      margin-top: 18px;
-      font-weight: 500;
-      color: #a0bbdf;
-      letter-spacing: 0.3px;
-      font-size: 0.9rem;
-    }
+        .hero-img {
+            background: #ffd9a5;
+            padding: 12px 20px;
+            border-radius: 80px;
+            font-size: 4rem;
+        }
 
-    .reference-img {
-      width: 100%;
-      max-height: 520px;
-      object-fit: cover;
-      border-radius: 24px;
-      display: block;
-      background: #0b0e16;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-      border: 1px solid #2a405c;
-    }
+        /* menu section */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 32px 0 24px 0;
+            border-left: 8px solid #e67e22;
+            padding-left: 20px;
+        }
 
-    /* weapon grid */
-    .section-title {
-      font-size: 2rem;
-      font-weight: 700;
-      margin: 48px 0 24px 0;
-      border-left: 5px solid #3a7ca5;
-      padding-left: 20px;
-    }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 28px;
+            margin-bottom: 48px;
+        }
 
-    .weapons-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 32px;
-      margin-bottom: 60px;
-    }
+        .menu-card {
+            background: white;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 12px 26px rgba(0,0,0,0.05);
+            transition: all 0.25s ease;
+            border: 1px solid #ffe1bc;
+        }
 
-    .weapon-card {
-      background: rgba(18, 22, 35, 0.8);
-      border-radius: 28px;
-      backdrop-filter: blur(2px);
-      padding: 24px 20px 28px;
-      transition: transform 0.2s ease, box-shadow 0.2s;
-      border: 1px solid #29384b;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.3);
-    }
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+        }
 
-    .weapon-card:hover {
-      transform: translateY(-6px);
-      border-color: #4d7cae;
-      box-shadow: 0 20px 28px -10px black;
-    }
+        .card-header {
+            background: #fff6ea;
+            padding: 18px 20px 10px;
+            border-bottom: 1px dashed #ffcf9a;
+        }
 
-    .weapon-icon {
-      font-size: 3rem;
-      margin-bottom: 16px;
-    }
+        .card-header h3 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+        }
 
-    .weapon-card h3 {
-      font-size: 1.7rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
+        .price {
+            color: #e67e22;
+            font-weight: 800;
+        }
 
-    .weapon-category {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #7ba5cf;
-      margin-bottom: 14px;
-    }
+        .desc {
+            color: #6c5a48;
+            padding: 6px 0 0;
+            font-size: 0.85rem;
+        }
 
-    .weapon-desc {
-      color: #b9c8f0;
-      font-size: 0.9rem;
-      margin-bottom: 20px;
-    }
+        .card-options {
+            padding: 18px 20px;
+        }
 
-    .specs {
-      display: flex;
-      justify-content: space-between;
-      border-top: 1px solid #2c3e50;
-      padding-top: 16px;
-      margin-top: 8px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: #95adcc;
-    }
+        .addon-group {
+            margin-top: 18px;
+            border-top: 1px solid #f5e5d4;
+            padding-top: 14px;
+        }
 
-    .inquiry {
-      background: none;
-      border: 1.5px solid #4582b4;
-      color: #cae3ff;
-      padding: 8px 16px;
-      border-radius: 40px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.2s;
-      width: 100%;
-      margin-top: 20px;
-      background: rgba(0, 30, 60, 0.4);
-      font-family: inherit;
-    }
+        .addon-title {
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            color: #b45f2b;
+            letter-spacing: 0.3px;
+        }
 
-    .inquiry:hover {
-      background: #2a5f8a;
-      border-color: #7fbbff;
-      color: white;
-      cursor: pointer;
-    }
+        .addon-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
 
-    /* cta & footer */
-    .cta-section {
-      background: linear-gradient(145deg, #0e121f, #05070c);
-      border-radius: 48px;
-      padding: 48px 32px;
-      margin: 40px 0 32px;
-      text-align: center;
-      border: 1px solid #2c4058;
-    }
+        .addon-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #fef3e4;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.1s;
+            border: 1px solid #ffdead;
+        }
 
-    .cta-section h3 {
-      font-size: 2rem;
-      margin-bottom: 12px;
-    }
+        .addon-item.selected {
+            background: #e67e22;
+            color: white;
+            border-color: #e67e22;
+        }
 
-    .cta-button {
-      background: #1c6c9c;
-      border: none;
-      padding: 12px 40px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      border-radius: 60px;
-      color: white;
-      margin-top: 24px;
-      transition: 0.2s;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    }
+        .addon-item i {
+            font-size: 0.7rem;
+        }
 
-    .cta-button:hover {
-      background: #2e7fb0;
-      transform: scale(1.02);
-    }
+        .qty-control {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 18px 0 12px;
+        }
 
-    footer {
-      text-align: center;
-      padding: 28px 0 40px;
-      border-top: 1px solid #1f2a38;
-      margin-top: 20px;
-      font-size: 0.85rem;
-      color: #7f8fa4;
-    }
+        .qty-selector {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #f3ede5;
+            border-radius: 100px;
+            padding: 4px 10px;
+        }
 
-    @media (max-width: 800px) {
-      .hero h2 { font-size: 2.2rem; }
-      .nav-wrapper { flex-direction: column; }
-      .nav-links { gap: 20px; flex-wrap: wrap; justify-content: center; }
-      .container { padding: 0 20px; }
-      .section-title { font-size: 1.6rem; }
-    }
+        .qty-btn {
+            background: none;
+            border: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            width: 28px;
+            cursor: pointer;
+            color: #e67e22;
+        }
 
-    /* modal minimal (demo) */
-    .modal-message {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #1c2e44;
-      padding: 14px 24px;
-      border-radius: 50px;
-      color: white;
-      font-weight: 500;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 4px 14px black;
-      opacity: 0;
-      transition: opacity 0.2s;
-      pointer-events: none;
-      z-index: 200;
-      font-size: 0.9rem;
-      border-left: 4px solid #3e8bcb;
-    }
-  </style>
+        .qty-num {
+            font-weight: 700;
+            min-width: 28px;
+            text-align: center;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            background: #f5bc70;
+            border: none;
+            padding: 10px 0;
+            border-radius: 40px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+            color: #4a2a12;
+        }
+
+        .add-to-cart:hover {
+            background: #e67e22;
+            color: white;
+        }
+
+        /* cart side panel (simple drawer) */
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            right: -420px;
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            background: white;
+            box-shadow: -5px 0 30px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: right 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-overlay.open {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 20px;
+            background: #ffeed9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #e67e22;
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 12px;
+        }
+
+        .cart-total {
+            padding: 20px;
+            border-top: 2px solid #f0e0ce;
+            font-weight: 800;
+            font-size: 1.3rem;
+        }
+
+        .checkout-btn {
+            background: #e67e22;
+            color: white;
+            width: calc(100% - 40px);
+            margin: 10px 20px 30px;
+            border: none;
+            padding: 14px;
+            border-radius: 60px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: #d35400;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -12px;
+            background: #e67e22;
+            color: white;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 32px 20px;
+            margin-top: 40px;
+            background: #ffeed9;
+            border-radius: 40px 40px 0 0;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 700px) {
+            .hero-text h2 { font-size: 1.8rem; }
+            .section-title { font-size: 1.6rem; }
+        }
+        button {
+            background: none;
+            border: none;
+        }
+        .toast-msg {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2d2a24;
+            color: #ffe2b5;
+            padding: 10px 24px;
+            border-radius: 60px;
+            font-size: 0.9rem;
+            z-index: 1100;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+    </style>
 </head>
 <body>
 
-<div class="modal-message" id="toastMsg">✅ Request received — defense liaison will contact.</div>
-
-<header class="header">
-  <div class="container nav-wrapper">
-    <div class="logo">
-      <h1>⚔️ APEX DEFENSE</h1>
-      <span>strategic arms & aerospace systems</span>
+<div class="navbar">
+    <div class="container nav-wrapper">
+        <div class="logo">
+            <h1>🍘 Pani Puri Express</h1>
+            <p>crunch • spice • sweet • delivered</p>
+        </div>
+        <div class="delivery-badge">
+            <i class="fas fa-motorcycle"></i>
+            <span>FREE delivery above ₹199</span>
+            <i class="fas fa-clock"></i>
+            <span>30-40 min</span>
+        </div>
+        <div class="cart-icon" id="cartIcon">
+            <i class="fas fa-shopping-basket"></i>
+            <span class="cart-count" id="cartCount">0</span>
+        </div>
     </div>
-    <div class="nav-links">
-      <a href="#">Inventory</a>
-      <a href="#">Platforms</a>
-      <a href="#">Intelligence</a>
-      <a href="#" class="btn-contact">Global Command</a>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container hero-content">
+        <div class="hero-text">
+            <h2>Golgappa cravings? <br>We’re just a tap away!</h2>
+            <p>Authentic Delhi-style panipuri, dahi puri, sev puri & more. Loaded with add-ons like extra onions, sweet chutney, spicy mix — delivered hot & fresh.</p>
+            <button class="btn-order" id="scrollToMenuBtn"><i class="fas fa-arrow-down"></i> Order Now</button>
+        </div>
+        <div class="hero-img">
+            <i class="fas fa-utensils"></i> 🧆🍃
+        </div>
     </div>
-  </div>
-</header>
+</section>
 
-<main class="container">
-  <div class="hero">
-    <h2>Next‑Generation Deterrence</h2>
-    <p>Missiles · Fighters · Air Defense · Radars · Tankers · Strategic Systems</p>
-    <p style="font-size: 0.9rem; color:#6a7f9e;">Authorized for allied governments & approved defense contractors.</p>
-  </div>
+<div class="container">
+    <div class="section-title" id="menuSection">🌟 Our Signature Chaat Menu</div>
+    <div class="menu-grid" id="menuGrid"></div>
+</div>
 
-  <!-- ONE REFERENCE IMAGE FOR ALL WEAPONS (combined showcase) -->
-  <figure class="showcase">
-    <img class="reference-img" 
-         src="https://cdn.pixabay.com/photo/2018/06/11/20/19/military-aircraft-3469384_1280.jpg" 
-         alt="Unified reference image featuring fighter jet, missile systems, radar and air defense platforms — all key weapon systems"
-         onerror="this.src='https://placehold.co/1200x600/1a2538/7f9fcf?text=Defense+Arsenal+Reference+Image';">
-    <figcaption>📡 Reference: Integrated combat air power — multirole fighters, long-range missiles, and ground-based air defense systems (illustrative overview of available platforms).</figcaption>
-  </figure>
-
-  <!-- weapon catalog -->
-  <div class="section-title">🔥 Active arsenal — strategic catalog</div>
-  <div class="weapons-grid">
-    
-    <!-- Missile Card -->
-    <div class="weapon-card">
-      <div class="weapon-icon">🚀</div>
-      <h3>Hypersonic Missiles</h3>
-      <div class="weapon-category">Offensive / Strategic</div>
-      <div class="weapon-desc">Mach 8+ cruise & ballistic missiles, advanced counter‑defense penetration, conventional & precision variants.</div>
-      <div class="specs"><span>Range: 2,500km+</span><span>CEP: <5m</span></div>
-      <button class="inquiry" data-weapon="Hypersonic Missile System">Request specs & pricing</button>
+<!-- Cart Drawer -->
+<div id="cartDrawer" class="cart-overlay">
+    <div class="cart-header">
+        <h3><i class="fas fa-shopping-cart"></i> Your Puri Cart</h3>
+        <button class="close-cart" id="closeCartBtn">&times;</button>
     </div>
-
-    <!-- Fighter Jet -->
-    <div class="weapon-card">
-      <div class="weapon-icon">✈️</div>
-      <h3>Stealth Fighter Jet</h3>
-      <div class="weapon-category"> Air Dominance</div>
-      <div class="weapon-desc">5th-gen multirole, low-observable, AESA radar, supercruise capability & networked warfare.</div>
-      <div class="specs"><span>Speed: Mach 2.1</span><span>Ceiling: 65k ft</span></div>
-      <button class="inquiry" data-weapon="Fighter Jet (Stealth Airframe)">Request specs & pricing</button>
+    <div class="cart-items" id="cartItemsList">
+        <div style="text-align:center; padding:30px;">Your cart is empty<br>Add some puris 🍽️</div>
     </div>
+    <div class="cart-total" id="cartTotalDisplay">Total: ₹0</div>
+    <button class="checkout-btn" id="checkoutBtn">Place Order 🚀</button>
+</div>
 
-    <!-- Tanker Aircraft -->
-    <div class="weapon-card">
-      <div class="weapon-icon">⛽</div>
-      <h3>Strategic Tanker</h3>
-      <div class="weapon-category">Force Multiplier</div>
-      <div class="weapon-desc">Aerial refueling platform, multi‑role boom & probe-drogue, extended combat radius for fighters & bombers.</div>
-      <div class="specs"><span>Fuel cap: 110 tonnes</span><span>Range: 11,000km</span></div>
-      <button class="inquiry" data-weapon="KC-X Strategic Tanker">Request specs & pricing</button>
-    </div>
-
-    <!-- Air Defence System -->
-    <div class="weapon-card">
-      <div class="weapon-icon">🛡️</div>
-      <h3>Integrated Air Defense</h3>
-      <div class="weapon-category">Shield / C-RAM</div>
-      <div class="weapon-desc">Long-range SAM + short-range SHORAD, 360° coverage, engages aircraft, drones & hypersonic threats.</div>
-      <div class="specs"><span>Range: 150km</span><span>Altitude: 30km</span></div>
-      <button class="inquiry" data-weapon="Air Defense System (Aegis-derived)">Request specs & pricing</button>
-    </div>
-
-    <!-- Radar System -->
-    <div class="weapon-card">
-      <div class="weapon-icon">📡</div>
-      <h3>3D AESA Radar</h3>
-      <div class="weapon-category">Surveillance & Targeting</div>
-      <div class="weapon-desc">Active electronically scanned array, 360° air and missile defense radar, tracks 2,000+ objects simultaneously.</div>
-      <div class="specs"><span>Band: S/X</span><span>Range: 550km</span></div>
-      <button class="inquiry" data-weapon="3D AESA Radar System">Request specs & pricing</button>
-    </div>
-
-    <!-- Additional Heavy Missile / MLRS -->
-    <div class="weapon-card">
-      <div class="weapon-icon">💥</div>
-      <h3>Strategic Cruise Missile</h3>
-      <div class="weapon-category">Land / Sea Attack</div>
-      <div class="weapon-desc">Terrain-following, low observable, precision strike deep within contested environments.</div>
-      <div class="specs"><span>Warhead: 450kg</span><span>Range: 1,800km</span></div>
-      <button class="inquiry" data-weapon="Strategic Cruise Missile System">Request specs & pricing</button>
-    </div>
-
-    <!-- Air Defense + C-UAS -->
-    <div class="weapon-card">
-      <div class="weapon-icon">🎯</div>
-      <h3>C-UAS / Laser Defense</h3>
-      <div class="weapon-category">Directed Energy</div>
-      <div class="weapon-desc">High-energy laser & microwave counter-UAS, hard-kill drone defense, mobile integration.</div>
-      <div class="specs"><span>Power: 50kW</span><span>Engage: micro drones</span></div>
-      <button class="inquiry" data-weapon="Laser-based Air Defense">Request specs & pricing</button>
-    </div>
-
-    <!-- Heavy Tanker / logistics -->
-    <div class="weapon-card">
-      <div class="weapon-icon">⛽✈️</div>
-      <h3>Multi-Role Tanker Transport</h3>
-      <div class="weapon-category">Logistics & Refueling</div>
-      <div class="weapon-desc">Dual role: cargo & aerial refueling. Supports fighter wings and global deployment.</div>
-      <div class="specs"><span>Payload: 45 tonnes</span><span>Range: 9,500km</span></div>
-      <button class="inquiry" data-weapon="Tanker / Transport Aircraft">Request specs & pricing</button>
-    </div>
-  </div>
-
-  <!-- additional radar and advanced missile section (ensure radars are covered) -->
-  <div class="section-title">⚙️ Advanced Surveillance & Fire Control</div>
-  <div class="weapons-grid">
-    <div class="weapon-card">
-      <div class="weapon-icon">🛰️</div>
-      <h3>Over‑Horizon Radar</h3>
-      <div class="weapon-category">Early Warning</div>
-      <div class="weapon-desc">OTHR capable of detecting stealth aircraft and ballistic missiles at extreme ranges.</div>
-      <div class="specs"><span>Range: 3,000km+</span><span>multi-target</span></div>
-      <button class="inquiry" data-weapon="Over-Horizon Radar Network">Request pricing</button>
-    </div>
-    <div class="weapon-card">
-      <div class="weapon-icon">⚡</div>
-      <h3>Short Range Air Defense</h3>
-      <div class="weapon-category">SHORAD / MANPADS</div>
-      <div class="weapon-desc">Rapid-deployment IR & radar-guided systems for forward battlefield air defense.</div>
-      <div class="specs"><span>Ceiling: 5km</span><span>Reaction: 3s</span></div>
-      <button class="inquiry" data-weapon="SHORAD Air Defense Unit">Request specs</button>
-    </div>
-    <div class="weapon-card">
-      <div class="weapon-icon">🚁🔥</div>
-      <h3>Attack Helicopter Support</h3>
-      <div class="weapon-category">Close Air Support</div>
-      <div class="weapon-desc">Dedicated anti-armor & armed reconnaissance, integrated with battlefield radars.</div>
-      <div class="specs"><span>Rockets/ATGM</span><span>Day/Night</span></div>
-      <button class="inquiry" data-weapon="Attack Helicopter Systems">Request information</button>
-    </div>
-  </div>
-
-  <!-- cta section -->
-  <div class="cta-section">
-    <h3>⚡ Global defense procurement</h3>
-    <p>Authorized government & verified industry partners — request complete catalog, including export-controlled variants & integrated C4ISR.</p>
-    <button class="cta-button" id="mainCtaBtn">Request Defense Briefing →</button>
-  </div>
-</main>
-
-<footer>
-  <p>© 2025 APEX DEFENSE SYSTEMS — compliance with international arms regulations. For authorized entities only.<br>
-  All trademarks, systems & specifications for reference. Contact our Joint Forces Desk.</p>
-</footer>
+<div id="toastMsg" class="toast-msg"></div>
 
 <script>
-  // unified toast notification function
-  function showToast(message) {
-    const toast = document.getElementById('toastMsg');
-    if (!toast) return;
-    toast.textContent = message || '✅ Request received — defense liaison will contact.';
-    toast.style.opacity = '1';
-    setTimeout(() => {
-      toast.style.opacity = '0';
-    }, 2800);
-    setTimeout(() => {
-      if(toast) toast.textContent = '✅ Request received — defense liaison will contact.';
-    }, 3000);
-  }
+    // ---------- MENU DATA (with base price & possible add-ons) ----------
+    const menuItems = [
+        { id: 1, name: "Pani Puri", basePrice: 49, desc: "6 pcs with spicy mint water & sweet chutney", addons: ["Extra Onions", "Extra Sev", "Sweet Chutney"] },
+        { id: 2, name: "Dahi Puri", basePrice: 59, desc: "Crispy puri filled with yogurt, chutney & sev", addons: ["Extra Onions", "Sweet Chutney", "Extra Dahi"] },
+        { id: 3, name: "Masala Puri", basePrice: 65, desc: "Crushed puri with spicy masala, sprouts & chutneys", addons: ["Extra Onions", "Extra Sev", "Pomegranate"] },
+        { id: 4, name: "Sev Puri", basePrice: 55, desc: "Flat puri topped with potato, onions, sev & chutneys", addons: ["Extra Onions", "Garlic Chutney", "Extra Sev"] },
+        { id: 5, name: "Bhel Puri (Chat)", basePrice: 50, desc: "Puffed rice, veggie mix, tangy tamarind", addons: ["Extra Onions", "Sweet Chutney", "Extra Sev"] },
+        { id: 6, name: "Samosa Chaat", basePrice: 75, desc: "Crushed samosa with chole, chutney & curd", addons: ["Extra Onions", "Sweet Chutney", "Extra Curd"] }
+    ];
 
-  // gather all inquiry buttons
-  const inquiryBtns = document.querySelectorAll('.inquiry');
-  inquiryBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const weaponName = btn.getAttribute('data-weapon') || 'selected defense system';
-      showToast(`📡 Inquiry sent: ${weaponName} — our team will respond within 24h.`);
-      // optional: you could log to console for demo, but meets functionality
-      console.log(`[RFQ] Weapon inquiry: ${weaponName}`);
+    // additional add-ons global mapping reference (price for extra)
+    const addOnPrices = {
+        "Extra Onions": 10,
+        "Extra Sev": 12,
+        "Sweet Chutney": 8,
+        "Garlic Chutney": 10,
+        "Extra Dahi": 15,
+        "Pomegranate": 18,
+        "Extra Curd": 15
+    };
+
+    // Cart structure: each cart item: { menuId, name, basePrice, quantity, selectedAddons: array of strings, imageIcon? }
+    let cart = [];
+
+    // Helper to render menu with dynamic addon toggles & qty
+    function renderMenu() {
+        const container = document.getElementById('menuGrid');
+        if (!container) return;
+        container.innerHTML = '';
+        menuItems.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'menu-card';
+            // For each item we need a unique UI state for quantity (default 1) and selected addons (track in memory for UI)
+            // We'll handle using data attributes / closures? Simplest: store temp state inside card using javascript map or create per card.
+            // Let's assign unique id container and use inline js but better build with event listeners.
+            // We'll create elements and attach listeners dynamically.
+            let quantity = 1;   // local to this card render (but changes will be stored per click)
+            let selectedAddons = [];   // local selected addons names
+
+            const addonList = item.addons || [];
+
+            card.innerHTML = `
+                <div class="card-header">
+                    <h3>${item.name} <span class="price">₹${item.basePrice}</span></h3>
+                    <div class="desc">${item.desc}</div>
+                </div>
+                <div class="card-options">
+                    <div class="addon-group">
+                        <div class="addon-title"><i class="fas fa-plus-circle"></i> Customize your Plate (add-ons)</div>
+                        <div class="addon-buttons" id="addons-${item.id}"></div>
+                    </div>
+                    <div class="qty-control">
+                        <span>Quantity</span>
+                        <div class="qty-selector">
+                            <button class="qty-btn dec-qty" data-id="${item.id}" type="button">−</button>
+                            <span class="qty-num" id="qty-${item.id}">1</span>
+                            <button class="qty-btn inc-qty" data-id="${item.id}" type="button">+</button>
+                        </div>
+                    </div>
+                    <button class="add-to-cart" data-id="${item.id}"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                </div>
+            `;
+            container.appendChild(card);
+            const addonContainer = document.getElementById(`addons-${item.id}`);
+            // populate addons buttons
+            addonList.forEach(addon => {
+                const addonBtn = document.createElement('div');
+                addonBtn.className = 'addon-item';
+                addonBtn.innerHTML = `<i class="fas fa-check-circle"></i> ${addon} (+₹${addOnPrices[addon] || 0})`;
+                addonBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    // toggle selection
+                    const index = selectedAddons.indexOf(addon);
+                    if (index === -1) {
+                        selectedAddons.push(addon);
+                        addonBtn.classList.add('selected');
+                    } else {
+                        selectedAddons.splice(index, 1);
+                        addonBtn.classList.remove('selected');
+                    }
+                });
+                addonContainer.appendChild(addonBtn);
+            });
+
+            // update quantity display
+            const qtySpan = card.querySelector(`#qty-${item.id}`);
+            const decBtn = card.querySelector('.dec-qty');
+            const incBtn = card.querySelector('.inc-qty');
+            decBtn.addEventListener('click', () => {
+                if (quantity > 1) {
+                    quantity--;
+                    qtySpan.innerText = quantity;
+                } else {
+                    showToast("At least 1 puri plate needed!", 1200);
+                }
+            });
+            incBtn.addEventListener('click', () => {
+                quantity++;
+                qtySpan.innerText = quantity;
+            });
+
+            // Add to cart button logic
+            const addBtn = card.querySelector('.add-to-cart');
+            addBtn.addEventListener('click', () => {
+                // retrieve current quantity and selected addons from the card's local vars
+                const finalQty = quantity;
+                const finalAddons = [...selectedAddons];
+                addToCart(item.id, item.name, item.basePrice, finalQty, finalAddons);
+            });
+        });
+    }
+
+    // add to cart function
+    function addToCart(id, name, basePrice, quantity, selectedAddons) {
+        if (quantity <= 0) return;
+        // calculate extra price for selected addons
+        let addonsTotal = 0;
+        selectedAddons.forEach(ad => {
+            if (addOnPrices[ad]) addonsTotal += addOnPrices[ad];
+        });
+        const totalItemPrice = (basePrice + addonsTotal) * quantity;
+
+        // check if exact same item with same addons exists -> merge
+        const existingIndex = cart.findIndex(item => 
+            item.menuId === id && 
+            JSON.stringify(item.selectedAddons.sort()) === JSON.stringify(selectedAddons.sort())
+        );
+        if (existingIndex !== -1) {
+            cart[existingIndex].quantity += quantity;
+        } else {
+            cart.push({
+                menuId: id,
+                name: name,
+                basePrice: basePrice,
+                quantity: quantity,
+                selectedAddons: selectedAddons,
+                addonsExtraPrice: addonsTotal,
+                totalPrice: totalItemPrice
+            });
+        }
+        updateCartUI();
+        showToast(`Added ${quantity} x ${name} to cart! 🛒`, 1500);
+        // Also open cart drawer gently
+        openCartDrawer();
+    }
+
+    function updateCartUI() {
+        const cartContainer = document.getElementById('cartItemsList');
+        const cartTotalSpan = document.getElementById('cartTotalDisplay');
+        const cartCountSpan = document.getElementById('cartCount');
+        if (!cartContainer) return;
+
+        if (cart.length === 0) {
+            cartContainer.innerHTML = '<div style="text-align:center; padding:30px;">Your cart is empty<br>Add some puris 🍽️</div>';
+            cartTotalSpan.innerText = 'Total: ₹0';
+            if(cartCountSpan) cartCountSpan.innerText = '0';
+            return;
+        }
+
+        let totalCartSum = 0;
+        let totalItemsCount = 0;
+        cartContainer.innerHTML = '';
+        cart.forEach((item, idx) => {
+            const itemAddonCost = (item.selectedAddons.reduce((sum, ad) => sum + (addOnPrices[ad] || 0), 0));
+            const eachBaseWithAddon = item.basePrice + itemAddonCost;
+            const lineTotal = eachBaseWithAddon * item.quantity;
+            totalCartSum += lineTotal;
+            totalItemsCount += item.quantity;
+
+            const addonsText = item.selectedAddons.length ? ` + ${item.selectedAddons.join(', ')}` : '';
+            const cartItemDiv = document.createElement('div');
+            cartItemDiv.className = 'cart-item';
+            cartItemDiv.innerHTML = `
+                <div><strong>${item.name}</strong> x${item.quantity}<br><small style="color:#b45f2b;">${addonsText}</small></div>
+                <div><strong>₹${lineTotal}</strong> <button class="remove-item" data-idx="${idx}" style="background:none; border:none; color:#e67e22; margin-left:12px; cursor:pointer;"><i class="fas fa-trash-alt"></i></button></div>
+            `;
+            cartContainer.appendChild(cartItemDiv);
+        });
+        cartTotalSpan.innerText = `Total: ₹${totalCartSum}`;
+        if(cartCountSpan) cartCountSpan.innerText = totalItemsCount;
+
+        // attach remove events
+        document.querySelectorAll('.remove-item').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const idx = parseInt(btn.getAttribute('data-idx'));
+                if (!isNaN(idx)) {
+                    cart.splice(idx, 1);
+                    updateCartUI();
+                    showToast("Item removed", 1000);
+                }
+            });
+        });
+    }
+
+    function showToast(msg, duration = 2000) {
+        const toast = document.getElementById('toastMsg');
+        if (!toast) return;
+        toast.innerText = msg;
+        toast.style.opacity = '1';
+        setTimeout(() => {
+            toast.style.opacity = '0';
+        }, duration);
+    }
+
+    function openCartDrawer() {
+        const drawer = document.getElementById('cartDrawer');
+        if (drawer) drawer.classList.add('open');
+    }
+
+    function closeCartDrawer() {
+        const drawer = document.getElementById('cartDrawer');
+        if (drawer) drawer.classList.remove('open');
+    }
+
+    // checkout action
+    function checkout() {
+        if (cart.length === 0) {
+            showToast("Your cart is empty! Add delicious panipuri first 🥺", 1800);
+            return;
+        }
+        const total = cart.reduce((sum, it) => {
+            const addonSum = it.selectedAddons.reduce((acc, ad) => acc + (addOnPrices[ad] || 0), 0);
+            return sum + (it.basePrice + addonSum) * it.quantity;
+        }, 0);
+        showToast(`✅ Order placed! ₹${total} • Your chaat arrives soon! 🛵`, 2500);
+        // clear cart
+        cart = [];
+        updateCartUI();
+        closeCartDrawer();
+    }
+
+    // Event listeners and dom ready
+    document.addEventListener('DOMContentLoaded', () => {
+        renderMenu();
+        const cartIconBtn = document.getElementById('cartIcon');
+        const closeCart = document.getElementById('closeCartBtn');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        const scrollBtn = document.getElementById('scrollToMenuBtn');
+        if(cartIconBtn) cartIconBtn.addEventListener('click', openCartDrawer);
+        if(closeCart) closeCart.addEventListener('click', closeCartDrawer);
+        if(checkoutBtn) checkoutBtn.addEventListener('click', checkout);
+        if(scrollBtn) {
+            scrollBtn.addEventListener('click', () => {
+                document.getElementById('menuSection').scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+        // initial empty cart
+        updateCartUI();
+        // close drawer if clicking overlay background (simple improvement)
+        const drawer = document.getElementById('cartDrawer');
+        drawer.addEventListener('click', (e) => {
+            if(e.target === drawer) closeCartDrawer();
+        });
     });
-  });
-
-  // main CTA button
-  const mainCta = document.getElementById('mainCtaBtn');
-  if(mainCta) {
-    mainCta.addEventListener('click', () => {
-      showToast('📄 Global Defense Briefing request acknowledged. A secure channel will be opened.');
-    });
-  }
-
-  // Additionally hover mods or just clean demo
-  // ensure each card has responsiveness
-  // The design includes a unified reference image as required.
-  // The reference image shows representation of jet, missiles, and air defense context.
-  // for better fallback on image load error we already set onerror.
-  
-  // edge: add a dynamic note for image description
-  const refImg = document.querySelector('.reference-img');
-  if(refImg && refImg.complete && refImg.naturalWidth === 0) {
-    // if placeholder triggers but fine anyway
-  }
-  // Ensure that the reference image covers all weapons spirit: we show a high-res modern military jet & missile launcher context.
-  // Replace with guaranteed robust defense style image (pixabay licensed free for commercial use? CC0? The image used is from Pixabay - free for commercial use, no attribution required)
-  // The image includes fighter jets and a refueling / armament theme, which implies missile, tanker, and radar context.
-  
-  // add additional smooth behavior 
-  const allCards = document.querySelectorAll('.weapon-card');
-  allCards.forEach(card => {
-    card.style.cursor = 'default';
-  });
-  
-  // Provide a small disclaimer note also works.
-  console.log('Apex Defense Portal ready | unified reference image active for missiles, fighters, tankers, air defense, radars');
 </script>
 
-<!-- 
-  Explanation: The page meets requirement "make a index.html file for nginx server" 
-  - contains 1 reference image that represents all weapon types (missiles, fighter jets, tankers, air defence systems, radars)
-  - the image shows a modern military scene with jet fighters and ground infrastructure that visually hints at missiles, radars and air defense.
-  - product grid includes detailed entries for each required category.
-  - fully self-contained, valid HTML/CSS/JS, ready to deploy on nginx.
--->
+<footer>
+    <p><i class="fas fa-heart" style="color:#e67e22;"></i> Golgappa & Chaat delivered with love — extra onions always crisp!<br>📍 Serving your street food cravings • Panipuri Express</p>
+</footer>
 </body>
 </html>
